@@ -28,13 +28,20 @@ public class Truck extends Transport<DriverCategoryC>{
 
     @Override
     public void bestLapTime() {
-        System.out.println("Грузовой автомобиль " + getBrand() + " " + getModel() + " показывает лучшее время круга.");
+        double minValue = 4;
+        double maxValue = 7;
+        double bestLapTime = minValue + ((maxValue - minValue) * Math.random());
+        System.out.printf("Грузовой автомобиль %s %s показывает лучшее время круга: %.2f мин.\n", getBrand(), getModel(),
+                bestLapTime);
     }
 
     @Override
     public void maximumSpeed() {
+        int minValue = 100;
+        int maxValue = 180;
+        int maximumSpeed = (int) (minValue + ((maxValue - minValue) * Math.random()));
         System.out.println("Максимальная скорость грузового автомобиля " + getBrand() + " " + getModel() +
-                " составляет 180 км/ч.");
+                " составляет " + maximumSpeed + " км/ч.");
     }
 
     // Блок проверки параметров

@@ -28,13 +28,20 @@ public class Bus extends Transport<DriverCategoryD>{
 
     @Override
     public void bestLapTime() {
-        System.out.println("Автобус " + getBrand() + " " + getModel() + " показывает лучшее время круга.");
+        double minValue = 5;
+        double maxValue = 8;
+        double bestLapTime = minValue + ((maxValue - minValue) * Math.random());
+        System.out.printf("Автобус %s %s показывает лучшее время круга: %.2f мин.\n", getBrand(), getModel(),
+                bestLapTime);
     }
 
     @Override
     public void maximumSpeed() {
+        int minValue = 90;
+        int maxValue = 140;
+        int maximumSpeed = (int) (minValue + ((maxValue - minValue) * Math.random()));
         System.out.println("Максимальная скорость автобуса " + getBrand() + " " + getModel() +
-                " составляет 150 км/ч.");
+                " составляет " + maximumSpeed + " км/ч.");
     }
 
     // Блок проверки параметров

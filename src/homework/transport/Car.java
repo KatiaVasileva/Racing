@@ -28,13 +28,20 @@ public class Car extends Transport<DriverCategoryB>{
 
     @Override
     public void bestLapTime() {
-        System.out.println("Легковой автомобиль " + getBrand() + " " + getModel() + " показывает лучшее время круга.");
+        double minValue = 2;
+        double maxValue = 4;
+        double bestLapTime = minValue + ((maxValue - minValue) * Math.random());
+        System.out.printf("Легковой автомобиль %s %s показывает лучшее время круга: %.2f мин.\n", getBrand(), getModel(),
+                bestLapTime);
     }
 
     @Override
     public void maximumSpeed() {
+        int minValue = 160;
+        int maxValue = 250;
+        int maximumSpeed = (int) (minValue + ((maxValue - minValue) * Math.random()));
         System.out.println("Максимальная скорость легкового автомобиля " + getBrand() + " " + getModel() +
-                " составляет 250 км/ч.");
+                " составляет " + maximumSpeed + " км/ч.");
     }
 
     // Блок проверки параметров

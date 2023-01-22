@@ -5,6 +5,7 @@ import homework.driver.DriverCategoryC;
 import homework.driver.DriverCategoryD;
 import homework.transport.Bus;
 import homework.transport.Car;
+import homework.transport.Transport;
 import homework.transport.Truck;
 
 public class Main {
@@ -66,15 +67,10 @@ public class Main {
 
         insertSeparator();
 
-        System.out.println("Водитель " + car1.getDriver().getDriverName() + " " + car1.getDriver().getDriverSurname() +
-                " управляет автомобилем " + car1.getModel() + " " + car1.getBrand() +
-                " и будет участвовать в заезде.");
-        System.out.println("Водитель " + truck2.getDriver().getDriverName() + " " + truck2.getDriver().getDriverSurname() +
-                " управляет автомобилем " + truck2.getModel() + " " + truck2.getBrand() +
-                " и будет участвовать в заезде.");
-        System.out.println("Водитель " + bus3.getDriver().getDriverName() + " " + bus3.getDriver().getDriverSurname() +
-                " управляет автомобилем " + bus3.getModel() + " " + bus3.getBrand() +
-                " и будет участвовать в заезде.");
+        System.out.println("Информация");
+        getInfo(car1);
+        getInfo(truck2);
+        getInfo(bus3);
 
         insertSeparator();
         System.out.println("Заезд легковых автомобилей:");
@@ -118,6 +114,12 @@ public class Main {
         bus2.maximumSpeed();
 
         insertSeparator();
+    }
+
+    public static void getInfo(Transport<?> transport) {
+            System.out.println("Водитель " + transport.getDriver().getDriverName() + " " + transport.getDriver().getDriverSurname() +
+                    " управляет автомобилем " + transport.getModel() + " " + transport.getBrand() +
+                    " и будет участвовать в заезде.");
     }
 
     public static void insertSeparator() {
