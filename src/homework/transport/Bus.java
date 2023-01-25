@@ -4,11 +4,20 @@ import homework.driver.DriverCategoryD;
 
 public class Bus extends Transport<DriverCategoryD>{
 
+    BusCapacity busCapacity;
+
     public Bus(String brand,
                String model,
                double engineVolume,
-               DriverCategoryD driver) {
+               DriverCategoryD driver,
+               BusCapacity busCapacity) {
         super(brand, model, engineVolume, driver);
+        this.busCapacity = busCapacity;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n    " + busCapacity;
     }
 
     @Override

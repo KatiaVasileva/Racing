@@ -4,11 +4,20 @@ import homework.driver.DriverCategoryC;
 
 public class Truck extends Transport<DriverCategoryC>{
 
+    TruckCapacity truckCapacity;
+
     public Truck(String brand,
                  String model,
                  double engineVolume,
-                 DriverCategoryC driver) {
+                 DriverCategoryC driver,
+                 TruckCapacity truckCapacity) {
         super(brand, model, engineVolume, driver);
+        this.truckCapacity = truckCapacity;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n   " + truckCapacity;
     }
 
     @Override

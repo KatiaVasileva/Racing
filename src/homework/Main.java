@@ -3,40 +3,49 @@ package homework;
 import homework.driver.DriverCategoryB;
 import homework.driver.DriverCategoryC;
 import homework.driver.DriverCategoryD;
-import homework.transport.Bus;
-import homework.transport.Car;
-import homework.transport.Transport;
-import homework.transport.Truck;
+import homework.transport.*;
 
 public class Main {
     public static void main(String[] args) {
 
         Car car1 = new Car("Lada", "Granta", 1.7,
-                new DriverCategoryB("Сергей", "Сироткин", true, 15));
+                new DriverCategoryB("Сергей", "Сироткин", true, 15),
+                BodyType.UNIVERSAL);
         Car car2 = new Car("Audi", "A8 50", 3.0,
-                new DriverCategoryB("Виталий", "Петров", true, 9));
+                new DriverCategoryB("Виталий", "Петров", true, 9),
+                BodyType.SEDAN);
         Car car3 = new Car("BMW", "Z8", 3.0,
-                new DriverCategoryB("Никита", "Мазепин", true, 7));
+                new DriverCategoryB("Никита", "Мазепин", true, 7),
+                BodyType.COUPE);
         Car car4 = new Car("Kia", "Sportage", 2.4,
-                new DriverCategoryB("Даниил", "Квят", true, 5));
+                new DriverCategoryB("Даниил", "Квят", true, 5),
+                BodyType.CROSSOVER);
 
         Truck truck1 = new Truck("Scania", "P-series", 12.7,
-                new DriverCategoryC("Владимир", "Чагин", true, 11));
+                new DriverCategoryC("Владимир", "Чагин", true, 11),
+                TruckCapacity.N2);
         Truck truck2 = new Truck("Hyundai", "Gold", 11.2,
-                new DriverCategoryC("Сергей", "Карякин", true, 8));
+                new DriverCategoryC("Сергей", "Карякин", true, 8),
+                TruckCapacity.N1);
         Truck truck3 = new Truck("Shacman", "SX3318", 11.6,
-                new DriverCategoryC("Владимир", "Васильев", true, 6));
+                new DriverCategoryC("Владимир", "Васильев", true, 6),
+                TruckCapacity.N3);
         Truck truck4 = new Truck("KAMAZ", "65115", 11.8,
-                new DriverCategoryC("Сергей", "Савенко", true, 13));
+                new DriverCategoryC("Сергей", "Савенко", true, 13),
+                TruckCapacity.N2);
 
         Bus bus1 = new Bus("Mercedes-Benz", "Tourismo", 11.9,
-                new DriverCategoryD("Никита", "Михайлов", true, 5));
+                new DriverCategoryD("Никита", "Михайлов", true, 5),
+                BusCapacity.VERY_LARGE);
         Bus bus2 = new Bus("Scania", "A80", 9.0,
-                new DriverCategoryD("Юрий", "Иванов", true, 9));
+                new DriverCategoryD("Юрий", "Иванов", true, 9),
+                BusCapacity.LARGE);
         Bus bus3 = new Bus("Toyota", "Coaster", 4.1,
-                new DriverCategoryD("Максим", "Стрельцов", true, 10));
+                new DriverCategoryD("Максим", "Стрельцов", true, 10),
+                BusCapacity.VERY_SMALL);
         Bus bus4 = new Bus("Yutong", "ZK6122H9", 8.9,
-                new DriverCategoryD("Алексей", "Попов", true, 7));
+                new DriverCategoryD("Алексей", "Попов", true, 7),
+                BusCapacity.AVERAGE);
 
         insertSeparator();
         System.out.println("Перечень участников соревнований (легковые автомобили)");

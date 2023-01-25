@@ -61,7 +61,7 @@ public class Driver {
     public String toString() {
         if (driversLicence) {
             return "Водитель: " + driverName + " " + driverSurname + ", водительские права - есть" +
-                    ", стаж вождения - " + drivingExperience + " лет";
+                    ", стаж вождения - " + drivingExperience + " лет.";
         } else {
             return "Водитель: " + driverName + " " + driverSurname + ", водительские права - нет. " +
                     "Водитель не допускается до соревнований!";
