@@ -13,13 +13,13 @@ public class Main {
                 null);
         Car car2 = new Car("Audi", "A8 50", 3.0,
                 new DriverCategoryB("Виталий", "Петров", true, 9),
-                BodyType.SEDAN);
+                CarBodyType.SEDAN);
         Car car3 = new Car( "BMW", "Z8", 3.0,
                 new DriverCategoryB("Никита", "Мазепин", true, 7),
-                BodyType.COUPE);
+                CarBodyType.COUPE);
         Car car4 = new Car("Kia", "Sportage", 2.4,
                 new DriverCategoryB("Даниил", "Квят", true, 5),
-                BodyType.CROSSOVER);
+                CarBodyType.CROSSOVER);
 
         Truck truck1 = new Truck( "Scania", "P-series", 12.7,
                 new DriverCategoryC("Владимир", "Чагин", true, 11),

@@ -1,6 +1,6 @@
 package homework.transport;
 
-public enum BodyType {
+public enum CarBodyType {
     SEDAN("седан"),
     HATCHBACK("хэтчбек"),
     COUPE("купе"),
@@ -13,7 +13,7 @@ public enum BodyType {
 
     private final String bodyType;
 
-    BodyType(String bodyType) {
+    CarBodyType(String bodyType) {
         this.bodyType = bodyType;
     }
 

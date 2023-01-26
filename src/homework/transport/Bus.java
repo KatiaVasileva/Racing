@@ -4,7 +4,7 @@ import homework.driver.DriverCategoryD;
 
 public class Bus extends Transport<DriverCategoryD>{
 
-    private final BusCapacity busCapacity;
+    private BusCapacity busCapacity;
 
     public Bus(String brand,
                String model,
@@ -17,6 +17,10 @@ public class Bus extends Transport<DriverCategoryD>{
 
     public BusCapacity getBusCapacity() {
         return busCapacity;
+    }
+
+    public void setBusCapacity(BusCapacity busCapacity) {
+        this.busCapacity = busCapacity;
     }
 
     @Override

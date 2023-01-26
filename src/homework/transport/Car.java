@@ -4,23 +4,23 @@ import homework.driver.DriverCategoryB;
 
 public class Car extends Transport<DriverCategoryB>{
 
-    private BodyType bodyType;
+    private CarBodyType bodyType;
 
 
     public Car(String brand,
                String model,
                double engineVolume,
                DriverCategoryB driver,
-               BodyType bodyType) {
+               CarBodyType bodyType) {
         super(brand, model, engineVolume, driver);
         this.bodyType = bodyType;
     }
 
-    public BodyType getBodyType() {
+    public CarBodyType getBodyType() {
         return bodyType;
     }
 
-    public void setBodyType(BodyType bodyType) {
+    public void setBodyType(CarBodyType bodyType) {
         this.bodyType = bodyType;
     }
 
