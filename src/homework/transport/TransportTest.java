@@ -8,8 +8,8 @@ public class TransportTest {
     public static void main(String[] args) {
         Transport<DriverCategoryB> testCar = new Car("", " ", 0,
                 new DriverCategoryB("", "", true, 0),
-                BodyType.MINIVAN);
-        Transport<DriverCategoryC> testTruck = new Truck("", " ", 0,
+                BodyType.COUPE);
+        Transport<DriverCategoryC> testTruck = new Truck( "", " ", 0,
                 new DriverCategoryC("", " ", false, -1),
                 TruckCapacity.N1);
         Transport<DriverCategoryD> testBus = new Bus("", " ", 0,

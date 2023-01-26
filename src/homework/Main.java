@@ -10,37 +10,37 @@ public class Main {
 
         Car car1 = new Car("Lada", "Granta", 1.7,
                 new DriverCategoryB("Сергей", "Сироткин", true, 15),
-                BodyType.UNIVERSAL);
+                null);
         Car car2 = new Car("Audi", "A8 50", 3.0,
                 new DriverCategoryB("Виталий", "Петров", true, 9),
                 BodyType.SEDAN);
-        Car car3 = new Car("BMW", "Z8", 3.0,
+        Car car3 = new Car( "BMW", "Z8", 3.0,
                 new DriverCategoryB("Никита", "Мазепин", true, 7),
                 BodyType.COUPE);
         Car car4 = new Car("Kia", "Sportage", 2.4,
                 new DriverCategoryB("Даниил", "Квят", true, 5),
                 BodyType.CROSSOVER);
 
-        Truck truck1 = new Truck("Scania", "P-series", 12.7,
+        Truck truck1 = new Truck( "Scania", "P-series", 12.7,
                 new DriverCategoryC("Владимир", "Чагин", true, 11),
                 TruckCapacity.N2);
-        Truck truck2 = new Truck("Hyundai", "Gold", 11.2,
+        Truck truck2 = new Truck( "Hyundai", "Gold", 11.2,
                 new DriverCategoryC("Сергей", "Карякин", true, 8),
                 TruckCapacity.N1);
         Truck truck3 = new Truck("Shacman", "SX3318", 11.6,
                 new DriverCategoryC("Владимир", "Васильев", true, 6),
-                TruckCapacity.N3);
+                null);
         Truck truck4 = new Truck("KAMAZ", "65115", 11.8,
                 new DriverCategoryC("Сергей", "Савенко", true, 13),
-                TruckCapacity.N2);
+                TruckCapacity.N3);
 
-        Bus bus1 = new Bus("Mercedes-Benz", "Tourismo", 11.9,
+        Bus bus1 = new Bus( "Mercedes-Benz", "Tourismo", 11.9,
                 new DriverCategoryD("Никита", "Михайлов", true, 5),
                 BusCapacity.VERY_LARGE);
-        Bus bus2 = new Bus("Scania", "A80", 9.0,
+        Bus bus2 = new Bus( "Scania", "A80", 9.0,
                 new DriverCategoryD("Юрий", "Иванов", true, 9),
-                BusCapacity.LARGE);
-        Bus bus3 = new Bus("Toyota", "Coaster", 4.1,
+                null);
+        Bus bus3 = new Bus( "Toyota", "Coaster", 4.1,
                 new DriverCategoryD("Максим", "Стрельцов", true, 10),
                 BusCapacity.VERY_SMALL);
         Bus bus4 = new Bus("Yutong", "ZK6122H9", 8.9,
@@ -123,6 +123,20 @@ public class Main {
         bus2.maximumSpeed();
 
         insertSeparator();
+
+        car1.printType();
+        car2.printType();
+        car3.printType();
+        car4.printType();
+        truck1.printType();
+        truck2.printType();
+        truck3.printType();
+        truck4.printType();
+        bus1.printType();
+        bus2.printType();
+        bus3.printType();
+        bus4.printType();
+
     }
 
     public static void getInfo(Transport<?> transport) {

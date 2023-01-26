@@ -16,11 +16,11 @@ public enum TruckCapacity {
     @Override
     public String toString() {
         if (minValue == null) {
-            return "Грузоподъемность: до " + maxValue + " тонн.\n  ";
+            return "Грузоподъемность: до " + maxValue + " тонн";
         } else if (maxValue == null) {
-            return "Грузоподъемность: свыше " + minValue + " тонн.\n  ";
+            return "Грузоподъемность: свыше " + minValue + " тонн";
         } else {
-            return "Грузоподъемность: от " + minValue + " до " + maxValue + " тонн.\n  ";
+            return "Грузоподъемность: от " + minValue + " до " + maxValue + " тонн";
         }
     }
 }

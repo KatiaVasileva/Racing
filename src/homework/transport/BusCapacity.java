@@ -18,9 +18,9 @@ public enum BusCapacity {
     @Override
     public String toString() {
         if (minValue == null) {
-            return "Вместимость: до " + maxValue + " мест.\n   ";
+            return "Вместимость: до " + maxValue + " мест";
         } else {
-            return "Вместимость: " + minValue + "-" + maxValue + " мест.\n   ";
+            return "Вместимость: " + minValue + "-" + maxValue + " мест";
         }
     }
 }

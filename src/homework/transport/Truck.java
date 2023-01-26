@@ -4,7 +4,7 @@ import homework.driver.DriverCategoryC;
 
 public class Truck extends Transport<DriverCategoryC>{
 
-    TruckCapacity truckCapacity;
+    private TruckCapacity truckCapacity;
 
     public Truck(String brand,
                  String model,
@@ -15,9 +15,21 @@ public class Truck extends Transport<DriverCategoryC>{
         this.truckCapacity = truckCapacity;
     }
 
+    public TruckCapacity getTruckCapacity() {
+        return truckCapacity;
+    }
+
+    public void setTruckCapacity(TruckCapacity truckCapacity) {
+        this.truckCapacity = truckCapacity;
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "\n   " + truckCapacity;
+        if (truckCapacity == null) {
+            return "Грузовой автомобиль " + super.toString() + "\n    Грузоподъемность: не указана";
+        } else {
+            return "Грузовой автомобиль " + super.toString() + "\n    " + truckCapacity;
+        }
     }
 
     @Override
@@ -51,6 +63,15 @@ public class Truck extends Transport<DriverCategoryC>{
         int maximumSpeed = (int) (minValue + ((maxValue - minValue) * Math.random()));
         System.out.println("Максимальная скорость грузового автомобиля " + getBrand() + " " + getModel() +
                 " составляет " + maximumSpeed + " км/ч.");
+    }
+
+    @Override
+    public void printType() {
+        if (truckCapacity == null) {
+            System.out.println("Данных по транспортному средству " + getBrand() + " " + getModel() + " недостаточно.");
+        } else {
+            System.out.println("Тип транспортного средства: грузовой автомобиль " + getBrand() + " " + getModel() + ". " + truckCapacity);
+        }
     }
 
     // Блок проверки параметров

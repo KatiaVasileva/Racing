@@ -22,6 +22,6 @@ public enum BodyType {
     }
 
     public String toString() {
-        return "Тип кузова: " + bodyType + ".\n   ";
+        return "Тип кузова: " + bodyType;
     }
 }
