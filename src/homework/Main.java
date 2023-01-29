@@ -160,7 +160,8 @@ public class Main {
         try {
             transport.goThroughDiagnostics();
         } catch (TransportTypeException e) {
-            System.err.println(e.getMessage()); // либо строка e.printStackTrace(); для вывода сообщения StackTrace
+            System.out.println(e.getMessage());
+            e.printStackTrace(); // для вывода сообщения StackTrace
         }
     }
 
