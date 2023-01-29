@@ -68,10 +68,15 @@ public class Bus extends Transport<DriverCategoryD>{
     @Override
     public void printType() {
         if (busCapacity == null) {
-            System.out.println("Данных по транспортному средству" + getBrand() + " " + getModel() + " недостаточно.");
+            System.out.println("Данных по транспортному средству " + getBrand() + " " + getModel() + " недостаточно.");
         } else {
             System.out.println("Тип транспортного средства: автобус " + getBrand() + " " + getModel() + ". " + busCapacity);
         }
+    }
+
+    @Override
+    public void goThroughDiagnostics() throws TransportTypeException {
+        throw new TransportTypeException("Автобусы не проходят диагностику.");
     }
 
     // Блок проверки параметров

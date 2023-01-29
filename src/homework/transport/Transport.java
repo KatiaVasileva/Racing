@@ -56,6 +56,8 @@ public abstract class Transport<T extends Driver> implements Competing{
 
     public abstract void printType();
 
+    public abstract void goThroughDiagnostics() throws TransportTypeException;
+
     // Блок проверки параметров
     public String validateCarParameter(String brand) {
         return Validation.validateString(brand, "default");
@@ -81,10 +83,3 @@ public abstract class Transport<T extends Driver> implements Competing{
     }
 }
 
-interface Competing{
-    void pitStop();
-
-    void bestLapTime();
-
-    void maximumSpeed();
-}

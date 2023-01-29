@@ -74,6 +74,11 @@ public class Truck extends Transport<DriverCategoryC>{
         }
     }
 
+    @Override
+    public void goThroughDiagnostics() {
+        System.out.println("Грузовой автомобиль " + getBrand() + " " + getModel() + " прошел диагностику.");
+    }
+
     // Блок проверки параметров
     @Override
     public double validateEngineVolume(double engineVolume) {
