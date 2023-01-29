@@ -4,11 +4,33 @@ import homework.driver.DriverCategoryB;
 
 public class Car extends Transport<DriverCategoryB>{
 
+    private CarBodyType bodyType;
+
+
     public Car(String brand,
                String model,
                double engineVolume,
-               DriverCategoryB driver) {
+               DriverCategoryB driver,
+               CarBodyType bodyType) {
         super(brand, model, engineVolume, driver);
+        this.bodyType = bodyType;
+    }
+
+    public CarBodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(CarBodyType bodyType) {
+        this.bodyType = bodyType;
+    }
+
+    @Override
+    public String toString() {
+        if (bodyType == null) {
+            return "Легковой автомобиль " + super.toString() + "\n    Тип кузова: не указан";
+        } else {
+            return " Легковой автомобиль " + super.toString() + "\n    " + bodyType;
+        }
     }
 
     @Override
@@ -42,6 +64,16 @@ public class Car extends Transport<DriverCategoryB>{
         int maximumSpeed = (int) (minValue + ((maxValue - minValue) * Math.random()));
         System.out.println("Максимальная скорость легкового автомобиля " + getBrand() + " " + getModel() +
                 " составляет " + maximumSpeed + " км/ч.");
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("Данных по транспортному средству " + getBrand() + " " + getModel() + " недостаточно.");
+        } else {
+            System.out.println("Тип транспортного средства: легковой автомобиль " + getBrand() +
+                    " " + getModel() + ". " + bodyType);
+        }
     }
 
     // Блок проверки параметров

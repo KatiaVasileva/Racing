@@ -47,12 +47,14 @@ public abstract class Transport<T extends Driver> implements Competing{
 
     @Override
     public String toString() {
-        return "Автомобиль: " + brand + " " + model + ", объем двигателя - " + engineVolume + " л.";
+        return  brand + " " + model + ", объем двигателя - " + engineVolume + " л";
     }
 
     public abstract void start();
 
     public abstract void stop();
+
+    public abstract void printType();
 
     // Блок проверки параметров
     public String validateCarParameter(String brand) {

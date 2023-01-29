@@ -4,11 +4,32 @@ import homework.driver.DriverCategoryD;
 
 public class Bus extends Transport<DriverCategoryD>{
 
+    private BusCapacity busCapacity;
+
     public Bus(String brand,
                String model,
                double engineVolume,
-               DriverCategoryD driver) {
+               DriverCategoryD driver,
+               BusCapacity busCapacity) {
         super(brand, model, engineVolume, driver);
+        this.busCapacity = busCapacity;
+    }
+
+    public BusCapacity getBusCapacity() {
+        return busCapacity;
+    }
+
+    public void setBusCapacity(BusCapacity busCapacity) {
+        this.busCapacity = busCapacity;
+    }
+
+    @Override
+    public String toString() {
+        if (busCapacity == null) {
+            return "Автобус " + super.toString() + "\n    Вместимость: не указана";
+        } else {
+            return "Автобус " + super.toString() + "\n    " + busCapacity;
+        }
     }
 
     @Override
@@ -42,6 +63,15 @@ public class Bus extends Transport<DriverCategoryD>{
         int maximumSpeed = (int) (minValue + ((maxValue - minValue) * Math.random()));
         System.out.println("Максимальная скорость автобуса " + getBrand() + " " + getModel() +
                 " составляет " + maximumSpeed + " км/ч.");
+    }
+
+    @Override
+    public void printType() {
+        if (busCapacity == null) {
+            System.out.println("Данных по транспортному средству" + getBrand() + " " + getModel() + " недостаточно.");
+        } else {
+            System.out.println("Тип транспортного средства: автобус " + getBrand() + " " + getModel() + ". " + busCapacity);
+        }
     }
 
     // Блок проверки параметров
