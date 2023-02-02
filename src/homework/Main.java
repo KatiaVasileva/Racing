@@ -137,12 +137,32 @@ public class Main {
         bus3.printType();
         bus4.printType();
 
+        insertSeparator();
+        System.out.println("Информация о диагностике");
+
+        printInfoAboutDiagnostics(car1);
+        printInfoAboutDiagnostics(truck1);
+        printInfoAboutDiagnostics(bus1);
+        printInfoAboutDiagnostics(truck2);
+        printInfoAboutDiagnostics(bus2);
+
+        insertSeparator();
+
     }
 
     public static void getInfo(Transport<?> transport) {
             System.out.println("Водитель " + transport.getDriver().getDriverName() + " " + transport.getDriver().getDriverSurname() +
                     " управляет автомобилем " + transport.getModel() + " " + transport.getBrand() +
                     " и будет участвовать в заезде.");
+    }
+
+    public static void printInfoAboutDiagnostics(Transport<?> transport) {
+        try {
+            transport.goThroughDiagnostics();
+        } catch (TransportTypeException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace(); // для вывода сообщения StackTrace
+        }
     }
 
     public static void insertSeparator() {

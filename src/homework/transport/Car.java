@@ -76,6 +76,11 @@ public class Car extends Transport<DriverCategoryB>{
         }
     }
 
+    @Override
+    public void goThroughDiagnostics() {
+        System.out.println("Легковой автомобиль " + getBrand() + " " + getModel() + " прошел диагностику.");
+    }
+
     // Блок проверки параметров
     @Override
     public double validateEngineVolume(double engineVolume) {
