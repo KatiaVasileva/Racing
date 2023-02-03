@@ -1,6 +1,9 @@
 package homework.transport;
 
 import homework.driver.DriverCategoryD;
+import homework.mechanic.Mechanic;
+
+import java.util.List;
 
 public class Bus extends Transport<DriverCategoryD>{
 
@@ -9,9 +12,10 @@ public class Bus extends Transport<DriverCategoryD>{
     public Bus(String brand,
                String model,
                double engineVolume,
+               BusCapacity busCapacity,
                DriverCategoryD driver,
-               BusCapacity busCapacity) {
-        super(brand, model, engineVolume, driver);
+               List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, driver, mechanics);
         this.busCapacity = busCapacity;
     }
 
@@ -26,9 +30,11 @@ public class Bus extends Transport<DriverCategoryD>{
     @Override
     public String toString() {
         if (busCapacity == null) {
-            return "Автобус " + super.toString() + "\n    Вместимость: не указана";
+            return "Автобус " + super.toString() + "\n    Вместимость: не указана" +
+                    getDriver();
         } else {
-            return "Автобус " + super.toString() + "\n    " + busCapacity;
+            return "Автобус " + super.toString() + "\n    " + busCapacity +
+                    getDriver();
         }
     }
 
@@ -77,6 +83,11 @@ public class Bus extends Transport<DriverCategoryD>{
     @Override
     public void goThroughDiagnostics() throws TransportTypeException {
         throw new TransportTypeException("Автобусы не проходят диагностику.");
+    }
+
+    @Override
+    public void checkInspection() throws TransportTypeException{
+        throw new TransportTypeException("Автобусы не проходят техосмотр.");
     }
 
     // Блок проверки параметров

@@ -45,14 +45,17 @@ public class Driver {
         this.drivingExperience = drivingExperience;
     }
 
+    // // Метод, который выводит информацию о том, что водитель начал движение
     public void start() {
         System.out.println("Водитель " + getDriverName() + " " + getDriverSurname() + " начинает движение.");
     }
 
+    // Метод, который выводит информацию о том, что водитель остановился
     public void stop() {
         System.out.println("Водитель " + getDriverName() + " " + getDriverSurname() + " останавливается.");
     }
 
+    // Метод, который выводит информацию о том, что водитель заправляет автомобиль
     public void fillCar() {
         System.out.println("Водитель " + getDriverName() + " " + getDriverSurname() + " заправляет автомобиль.");
     }
