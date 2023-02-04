@@ -1,6 +1,9 @@
 package homework.transport;
 
 import homework.driver.DriverCategoryC;
+import homework.mechanic.Mechanic;
+
+import java.util.List;
 
 public class Truck extends Transport<DriverCategoryC>{
 
@@ -9,9 +12,10 @@ public class Truck extends Transport<DriverCategoryC>{
     public Truck(String brand,
                  String model,
                  double engineVolume,
+                 TruckCapacity truckCapacity,
                  DriverCategoryC driver,
-                 TruckCapacity truckCapacity) {
-        super(brand, model, engineVolume, driver);
+                 List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, driver, mechanics);
         this.truckCapacity = truckCapacity;
     }
 
@@ -26,9 +30,11 @@ public class Truck extends Transport<DriverCategoryC>{
     @Override
     public String toString() {
         if (truckCapacity == null) {
-            return "Грузовой автомобиль " + super.toString() + "\n    Грузоподъемность: не указана";
+            return "Грузовой автомобиль " + super.toString() + "\n    Грузоподъемность: не указана" +
+                    getDriver();
         } else {
-            return "Грузовой автомобиль " + super.toString() + "\n    " + truckCapacity;
+            return "Грузовой автомобиль " + super.toString() + "\n    " + truckCapacity +
+                    getDriver();
         }
     }
 
@@ -77,6 +83,11 @@ public class Truck extends Transport<DriverCategoryC>{
     @Override
     public void goThroughDiagnostics() {
         System.out.println("Грузовой автомобиль " + getBrand() + " " + getModel() + " прошел диагностику.");
+    }
+
+    @Override
+    public void checkInspection() {
+        System.out.println("Выполнен техосмотр грузового автомобиля " + getBrand() + " " + getModel() + ".");
     }
 
     // Блок проверки параметров

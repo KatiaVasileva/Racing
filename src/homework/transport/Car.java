@@ -1,6 +1,9 @@
 package homework.transport;
 
 import homework.driver.DriverCategoryB;
+import homework.mechanic.Mechanic;
+
+import java.util.List;
 
 public class Car extends Transport<DriverCategoryB>{
 
@@ -10,9 +13,10 @@ public class Car extends Transport<DriverCategoryB>{
     public Car(String brand,
                String model,
                double engineVolume,
+               CarBodyType bodyType,
                DriverCategoryB driver,
-               CarBodyType bodyType) {
-        super(brand, model, engineVolume, driver);
+               List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, driver, mechanics);
         this.bodyType = bodyType;
     }
 
@@ -27,9 +31,11 @@ public class Car extends Transport<DriverCategoryB>{
     @Override
     public String toString() {
         if (bodyType == null) {
-            return "Легковой автомобиль " + super.toString() + "\n    Тип кузова: не указан";
+            return "Легковой автомобиль " + super.toString() + "\n    Тип кузова: не указан" +
+                    getDriver();
         } else {
-            return " Легковой автомобиль " + super.toString() + "\n    " + bodyType;
+            return " Легковой автомобиль " + super.toString() + "\n    " + bodyType +
+                    getDriver();
         }
     }
 
@@ -79,6 +85,11 @@ public class Car extends Transport<DriverCategoryB>{
     @Override
     public void goThroughDiagnostics() {
         System.out.println("Легковой автомобиль " + getBrand() + " " + getModel() + " прошел диагностику.");
+    }
+
+    @Override
+    public void checkInspection() {
+        System.out.println("Выполнен техосмотр легкового автомобиля " + getBrand() + " " + getModel() + ".");
     }
 
     // Блок проверки параметров
