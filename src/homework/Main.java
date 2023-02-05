@@ -7,22 +7,20 @@ import homework.mechanic.Mechanic;
 import homework.mechanic.ServiceStation;
 import homework.transport.*;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<Transport<?>> racingCars = new ArrayList<>();
-
         List<Mechanic> mechanics1 = new ArrayList<>();
+
         mechanics1.add(new Mechanic("Максим", "Михайлов", "Авто-Лидер-Запад"));
         mechanics1.add(new Mechanic("Сергей", "Субботин", "АвтоГермес"));
         List<Mechanic> mechanics2 = new ArrayList<>();
         mechanics2.add(new Mechanic("Евгений", "Водолазкин", "Глобал Авто"));
         mechanics2.add(new Mechanic("Анатолий", "Карпов", "Техцентр Барс"));
 
+        List<Transport<?>> racingCars = new ArrayList<>();
 
         racingCars.add(new Car("Lada", "Granta", 1.7, null,
                 new DriverCategoryB("Сергей", "Сироткин", true, 15),
@@ -62,6 +60,8 @@ public class Main {
                 mechanics2));
 
         ServiceStation queueForInspection = new ServiceStation(new LinkedList<>());
+
+        Map<Transport<?>, List<Mechanic>> vehicleList = new HashMap<>();
 
         insertSeparator();
         System.out.println("Перечень участников соревнований");
@@ -145,7 +145,24 @@ public class Main {
         getInfoAboutInspection(queueForInspection);
         queueForInspection.addInQueue(racingCars.get(3));
         getInfoAboutInspection(queueForInspection);
+
         insertSeparator();
+        System.out.println("Список \"автомобиль-механики\"");
+        vehicleList.put(racingCars.get(0), mechanics1);
+        vehicleList.put(racingCars.get(1), mechanics1);
+        vehicleList.put(racingCars.get(2), mechanics2);
+        vehicleList.put(racingCars.get(3), mechanics1);
+        vehicleList.put(racingCars.get(4), mechanics2);
+        vehicleList.put(racingCars.get(5), mechanics2);
+        vehicleList.put(racingCars.get(6), mechanics1);
+        vehicleList.put(racingCars.get(7), mechanics2);
+        vehicleList.put(racingCars.get(8), mechanics1);
+        vehicleList.put(racingCars.get(9), mechanics2);
+        vehicleList.put(racingCars.get(10), mechanics1);
+        vehicleList.put(racingCars.get(11), mechanics2);
+        printVehicleAndMechanics(vehicleList);
+        insertSeparator();
+
     }
 
     // Метод, который выводит информацию обо всех автомобилях и водителях
@@ -190,8 +207,16 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
+
+    // Метод, который выводит пары ключ-значение (автомобиль-механики) через цикл for
+    public static void printVehicleAndMechanics(Map<Transport<?>, List<Mechanic>> vehicleList) {
+        for (Map.Entry<Transport<?>, List<Mechanic>> vehicle : vehicleList.entrySet()) {
+            System.out.println("Автомобиль: " + vehicle.getKey().getBrand() + " " + vehicle.getKey().getModel() +
+                    ", механики: " + vehicle.getValue().toString().replace("[", "").replace("]", ""));
+        }
+    }
     public static void insertSeparator() {
         System.out.println("=========================================================================" +
-                "=============================================");
+                "============================================================");
     }
 }

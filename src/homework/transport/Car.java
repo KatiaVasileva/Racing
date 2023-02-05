@@ -9,7 +9,6 @@ public class Car extends Transport<DriverCategoryB>{
 
     private CarBodyType bodyType;
 
-
     public Car(String brand,
                String model,
                double engineVolume,
