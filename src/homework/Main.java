@@ -62,6 +62,9 @@ public class Main {
         ServiceStation queueForInspection = new ServiceStation(new LinkedList<>());
 
         Map<Transport<?>, List<Mechanic>> vehicleList = new HashMap<>();
+        Car car1 = new Car("Lada", "Granta", 1.7, null,
+                new DriverCategoryB("Сергей", "Сироткин", true, 15),
+                mechanics1); // объект car1 полностью совпадает с объектом racingCar.get(0)
 
         insertSeparator();
         System.out.println("Перечень участников соревнований");
@@ -160,6 +163,7 @@ public class Main {
         vehicleList.put(racingCars.get(9), mechanics2);
         vehicleList.put(racingCars.get(10), mechanics1);
         vehicleList.put(racingCars.get(11), mechanics2);
+        vehicleList.put(car1, mechanics1);
         printVehicleAndMechanics(vehicleList);
         insertSeparator();
 
