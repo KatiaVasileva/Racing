@@ -4,6 +4,7 @@ import homework.driver.DriverCategoryC;
 import homework.mechanic.Mechanic;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Truck extends Transport<DriverCategoryC>{
 
@@ -94,5 +95,25 @@ public class Truck extends Transport<DriverCategoryC>{
     @Override
     public double validateEngineVolume(double engineVolume) {
         return engineVolume <= 0 ? 10.0 : engineVolume;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        if (!super.equals(other)) {
+            return false;
+        }
+        Truck truck = (Truck) other;
+        return truckCapacity == truck.truckCapacity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), truckCapacity);
     }
 }

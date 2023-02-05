@@ -4,6 +4,7 @@ import homework.driver.DriverCategoryD;
 import homework.mechanic.Mechanic;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Bus extends Transport<DriverCategoryD>{
 
@@ -94,5 +95,25 @@ public class Bus extends Transport<DriverCategoryD>{
     @Override
     public double validateEngineVolume(double engineVolume) {
         return engineVolume <= 0 ? 8.0 : engineVolume;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        if (!super.equals(other)) {
+            return false;
+        }
+        Bus bus = (Bus) other;
+        return busCapacity == bus.busCapacity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), busCapacity);
     }
 }
