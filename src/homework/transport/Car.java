@@ -4,11 +4,11 @@ import homework.driver.DriverCategoryB;
 import homework.mechanic.Mechanic;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Car extends Transport<DriverCategoryB>{
 
     private CarBodyType bodyType;
-
 
     public Car(String brand,
                String model,
@@ -96,5 +96,25 @@ public class Car extends Transport<DriverCategoryB>{
     @Override
     public double validateEngineVolume(double engineVolume) {
         return engineVolume <= 0 ? 1.5 : engineVolume;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        if (!super.equals(other)) {
+            return false;
+        }
+        Car car = (Car) other;
+        return bodyType == car.bodyType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), bodyType);
     }
 }
