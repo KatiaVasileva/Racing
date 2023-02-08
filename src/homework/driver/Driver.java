@@ -63,7 +63,7 @@ public class Driver {
     @Override
     public String toString() {
         if (driversLicence) {
-            return "\n    Водитель: " + driverName + " " + driverSurname + ", водительские права - есть" +
+            return "Водитель: " + driverName + " " + driverSurname + ", водительские права - есть" +
                     ", стаж вождения - " + drivingExperience + " лет";
         } else {
             return "\n    Водитель: " + driverName + " " + driverSurname + ", водительские права - нет. " +

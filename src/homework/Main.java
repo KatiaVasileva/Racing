@@ -1,5 +1,6 @@
 package homework;
 
+import homework.driver.Driver;
 import homework.driver.DriverCategoryB;
 import homework.driver.DriverCategoryC;
 import homework.driver.DriverCategoryD;
@@ -65,6 +66,8 @@ public class Main {
         Car car1 = new Car("Lada", "Granta", 1.7, null,
                 new DriverCategoryB("Сергей", "Сироткин", true, 15),
                 mechanics1); // объект car1 полностью совпадает с объектом racingCar.get(0)
+
+        Set<Driver> drivers = new HashSet<>();
 
         insertSeparator();
         System.out.println("Перечень участников соревнований");
@@ -165,8 +168,24 @@ public class Main {
         vehicleList.put(racingCars.get(11), mechanics2);
         vehicleList.put(car1, mechanics1);
         printVehicleAndMechanics(vehicleList);
-        insertSeparator();
 
+        insertSeparator();
+        System.out.println("Список водителей");
+        drivers.add(racingCars.get(0).getDriver());
+        drivers.add(racingCars.get(1).getDriver());
+        drivers.add(racingCars.get(2).getDriver());
+        drivers.add(racingCars.get(3).getDriver());
+        drivers.add(racingCars.get(4).getDriver());
+        drivers.add(racingCars.get(5).getDriver());
+        drivers.add(racingCars.get(6).getDriver());
+        drivers.add(racingCars.get(7).getDriver());
+        drivers.add(racingCars.get(8).getDriver());
+        drivers.add(racingCars.get(9).getDriver());
+        drivers.add(racingCars.get(10).getDriver());
+        drivers.add(racingCars.get(11).getDriver());
+        drivers.add(racingCars.get(1).getDriver()); // проверка на случай добавления одного и того же водителя(инфо должна выводится один раз)
+        printAllDrivers(drivers);
+        insertSeparator();
     }
 
     // Метод, который выводит информацию обо всех автомобилях и водителях
@@ -219,6 +238,15 @@ public class Main {
                     ", механики: " + vehicle.getValue().toString().replace("[", "").replace("]", ""));
         }
     }
+
+    // Метод, который выводит всех водителей с помощью итератора
+    public static void printAllDrivers(Set<Driver> drivers) {
+        Iterator<Driver> iterDrivers = drivers.iterator();
+        while (iterDrivers.hasNext()) {
+            System.out.println(iterDrivers.next());
+        }
+    }
+
     public static void insertSeparator() {
         System.out.println("=========================================================================" +
                 "============================================================");
