@@ -31,10 +31,10 @@ public class Car extends Transport<DriverCategoryB>{
     @Override
     public String toString() {
         if (bodyType == null) {
-            return "Легковой автомобиль " + super.toString() + "\n    Тип кузова: не указан" +
+            return "Легковой автомобиль " + super.toString() + "\n    Тип кузова: не указан\n    " +
                     getDriver();
         } else {
-            return " Легковой автомобиль " + super.toString() + "\n    " + bodyType +
+            return " Легковой автомобиль " + super.toString() + "\n    " + bodyType + "\n    " +
                     getDriver();
         }
     }

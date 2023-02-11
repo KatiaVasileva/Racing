@@ -31,10 +31,10 @@ public class Truck extends Transport<DriverCategoryC>{
     @Override
     public String toString() {
         if (truckCapacity == null) {
-            return "Грузовой автомобиль " + super.toString() + "\n    Грузоподъемность: не указана" +
+            return "Грузовой автомобиль " + super.toString() + "\n    Грузоподъемность: не указана\n    " +
                     getDriver();
         } else {
-            return "Грузовой автомобиль " + super.toString() + "\n    " + truckCapacity +
+            return "Грузовой автомобиль " + super.toString() + "\n    " + truckCapacity + "\n    " +
                     getDriver();
         }
     }

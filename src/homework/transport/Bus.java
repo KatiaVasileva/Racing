@@ -31,10 +31,10 @@ public class Bus extends Transport<DriverCategoryD>{
     @Override
     public String toString() {
         if (busCapacity == null) {
-            return "Автобус " + super.toString() + "\n    Вместимость: не указана" +
+            return "Автобус " + super.toString() + "\n    Вместимость: не указана\n    " +
                     getDriver();
         } else {
-            return "Автобус " + super.toString() + "\n    " + busCapacity +
+            return "Автобус " + super.toString() + "\n    " + busCapacity + "\n    " +
                     getDriver();
         }
     }
